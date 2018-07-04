@@ -1,0 +1,53 @@
+% =================== Assumptions =================== %
+\begin{frame}[t]{Load Balancing: Link Load}
+
+\begin{itemize}
+\item Assumptions:
+
+\begin{itemize}
+\item Uniform traffic pattern.
+\item Ideal routing.
+\end{itemize}
+\item The \textbf{load of a link} $e$, i.e. $l_{e}$, is the amount of traffic units traversing $e$ per cycle.
+\item The \textbf{average link load} is $\displaystyle l_{avg}=\frac{\sum{l_e}}{\#\textnormal{ links}}$.
+\item A network reaches the \textbf{saturation point} when \textbf{some link has the maximum link load} ($l_{max}= \max\{l_e\}$).
+\end{itemize}
+\end{frame}
+% =================== Link load =================== %
+\begin{frame}[t]{Load Balancing: Average Link Utilization }
+\begin{itemize}
+\item The average link utilization at the saturation point ($u_{avg}$) is
+$$\displaystyle u_{avg}=\frac{l_{avg}}{l_{max}}.$$
+\item \textbf{Symmetric graphs} are well-balanced, i.e. $u_{avg}=1$.
+\end{itemize}
+%\center{\includegraphics[width=0.85\textwidth]{images/maxll}}
+\end{frame}
+
+% =================== Link load =================== %
+%\begin{frame}[t]{Load Balancing: Well-balanced Networks}
+%\input{tables/well_balanced}
+%\end{frame}
+% =================== Link load =================== %
+\begin{frame}[t]{Load Balancing: Amount of Workstations Supported}
+\begin{itemize}
+\item \textbf{Maximum number of end points} $\Delta_p$ supported by each router \textbf{without reaching the saturation point}.
+$$\displaystyle\Delta_p\leq \frac{\Delta u_{avg}}{D_{avg}}$$
+\end{itemize}
+\end{frame}
+% ================ End points - n ================ %
+\begin{frame}[t]{Amount of Workstations with Respect to the Network Size}
+\center{\includegraphics[width=\textwidth]{images/enpXserv}}
+\end{frame}
+% ================ End points - radix ================ %
+\begin{frame}[t]{Amount of Workstations with Respect to the Router Radix}
+\center{\includegraphics[width=\textwidth]{images/enpXradix}}
+\end{frame}
+% =================== Link load =================== %
+\begin{frame}[t]{Load Balancing: Average Link Utilization ($u_{avg}$)}
+\begin{itemize}
+\item Percentage of link utilization at the saturation point.%, i.e.
+%$$\displaystyle u_{avg}=\frac{l_{avg}}{l_{max}}.$$
+%\item A network is \textbf{well-balanced} if $\displaystyle u_{avg}=1$.
+\end{itemize}
+\input{tables/well_balanced}
+\end{frame}

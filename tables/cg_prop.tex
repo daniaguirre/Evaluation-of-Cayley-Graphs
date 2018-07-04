@@ -1,0 +1,24 @@
+\small
+\centering
+\begin{tabular}[center]{|c|c|c|c|c|}
+\hline
+\multirow{3}{*}{\textbf{Topology}}&\multirow{3}{*}{\textbf{Diameter}}&\multirow{2}{*}{\textbf{Optimal}}&\multirow{1}{*}{\textbf{Optimal}}&\multirow{2}{*}{\textbf{Well}}\\
+&&\multirow{2}{*}{\textbf{connectivity}}&\multirow{1}{*}{\textbf{fault-}}&\multirow{2}{*}{\textbf{balanced}}\\
+&&&\multirow{1}{*}{\textbf{tolerance}}&\\
+\hline\noalign{\smallskip}
+\multirow{2}{*}{Bubble-sort} &\multirow{2}{*}{$O(\log(n)^2)$}&\multirow{2}{*}{}&\multirow{4}{*}{No}&\multirow{3}{*}{No}\\
+& & \multirow{2}{*}{No}&&\multirow{3}{*}{($u_{avg}\approx 0.8$)}\\
+\cline{1-2}
+\multirow{2}{*}{Butterfly} &\multirow{8}{*}{$O(\log(n))$}&&&\\
+& & &&\\
+\cline{1-1}\cline{3-5}
+\multirow{2}{*}{Star} &&\multirow{6}{*}{Yes}&\multirow{6}{*}{Yes}&\multirow{5}{*}{Yes}\\
+& &\multirow{5}{*}{}&&\multirow{5}{*}{($u_{avg}\approx 1$)}\\
+\cline{1-1}
+\multirow{2}{*}{Transposition} &&&&\\
+& &&&\\
+\cline{1-1}
+\multirow{2}{*}{Hypercube} &&&&\\
+& & &&\\
+\hline
+\end{tabular}

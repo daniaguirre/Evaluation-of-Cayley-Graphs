@@ -1,0 +1,160 @@
+% 	Name		:: 	sthlm Beamer Theme  HEAVILY based on the hsrmbeamer theme (Benjamin Weiss)
+%	Author		:: 	Mark Hendry Olson (mark@hendryolson.com)
+%	Created		::	2013-07-31
+%	Updated		::	June 18, 2015 at 08:45
+%	Version		:: 	1.0.2
+%	Email		:: 	mark@hendryolson.com
+%	Website		:: 	http://hendryolson.com
+%
+% 	License		:: 	This file may be distributed and/or modified under the
+%                  	GNU Public License.
+%
+%	Description	::	This presentation is a demonstration of the sthlm beamer
+%					theme, which is HEAVILY based on the HSRM beamer theme created by Benjamin Weiss
+%					(benjamin.weiss@student.hs-rm.de), which can be found on GitHub
+%					<https://github.com/hsrmbeamertheme/hsrmbeamert
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%        LOADING DOCUMENT
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%nosectionpage
+\documentclass[newPxFont,sthlmFooter,nionpage]{beamer}
+\usetheme{sthlm}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%        LOADING PACKAGES
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\usepackage[utf8]{inputenc}
+
+\usepackage{chronology}
+\usepackage{algpseudocode}
+\usepackage[Algorithmus]{algorithm}
+\usepackage{xpatch}
+\usepackage{pifont} %special symbols
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{tkz-berge}
+\usepackage{ulem}
+\usetikzlibrary{shapes,snakes}
+
+\xpatchcmd{\algorithmic}{\setcounter}{\algorithmicfont\setcounter}{}{}
+\providecommand{\algorithmicfont}{}
+\providecommand{\setalgorithmicfont}[1]{\renewcommand{\algorithmicfont}{#1}}
+\renewcommand{\algorithmiccomment}[1]{{\tiny\hfill$\triangleright$ #1}}
+
+
+\usepackage{changepage}
+
+\renewcommand{\event}[3][e]{%
+  \pgfmathsetlength\xstop{(#2-\theyearstart)*\unit}%
+  \ifx #1e%
+    \draw[fill=black,draw=none,opacity=0.5]%
+      (\xstop, 0) circle (.2\unit)%
+      node[opacity=1,rotate=45,right=.2\unit] {#3};%
+  \else%
+    \pgfmathsetlength\xstart{(#1-\theyearstart)*\unit}%
+    \draw[fill=black,draw=none,opacity=0.5,rounded corners=.1\unit]%
+      (\xstart,-.1\unit) rectangle%
+      node[opacity=1,rotate=45,right=.2\unit] {#3} (\xstop,.1\unit);%
+  \fi}%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%        BEAMER OPTIONS
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%\setbeameroption{show notes}
+
+\newtheorem{teo}{Teorema}
+\numberwithin{teo}{section} 
+
+% con * le indicamos que no lo debe numerar
+\newtheorem{cor}{Corolario}
+\numberwithin{cor}{section}
+
+
+\newtheorem{pro}{Preguntas adicionales}
+\numberwithin{pro}{section} 
+
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%	PRESENTATION INFORMATION
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\title{Evaluation of Cayley Graphs}
+\subtitle{for Parallel Computer Systems}
+\date{International Conference on Computer, Information and Telecommunication Systems\\ \texttt{\small{\textcolor{black!80}{July 11-13, 2018 - Colmar, France}}}}
+\author{\texttt{Daniela Aguirre Guerrero, Andreu Ma\~nosa, Llu\'is F\`abrega and Pere Vil\`a }}
+\institute{
+Universitat de Girona\\
+}
+
+
+\hypersetup{
+pdfauthor = {Daniela Aguirre Guerrero: daniela.aguirre@udg.edu},
+pdfsubject = {},
+pdfkeywords = {},
+pdfmoddate= {D:\pdfdate},
+pdfcreator = {}
+}
+
+\begin{document}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%	TITLE PAGE
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\maketitle
+
+%\begin{frame}[plain]
+%	\titlepage
+%\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%	TABLE OF CONTENTS: OVERVIEW
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}[plain]{Agenda}
+    \tableofcontents
+\end{frame}
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+% SECTIONS
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Introduction}
+\input{sections/cayley_graphs}
+\subsection{Symmetry}
+\input{sections/symmetry}
+\section{Evaluation of Topologies}
+\subsection{Connectivity and Fault-tolerance}
+\input{sections/connectivity}
+\subsection{Moore Bound}
+\input{sections/dd_problem}
+\subsection{Load Balancing}
+\input{sections/load_balancing}
+\input{sections/comparison}
+\section{Conclusions}
+\input{sections/conclusions}
+\input{sections/questions}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+% REFERENCES
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%\section{References}
+%\begin{frame}[allowframebreaks]{References}
+%  \bibliography{Bibliografia}
+%  \bibliographystyle{abbrv}
+%\end{frame}
+
+%\input{examples.tex}
+\end{document}

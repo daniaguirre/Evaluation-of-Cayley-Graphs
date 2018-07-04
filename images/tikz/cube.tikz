@@ -1,0 +1,61 @@
+%  snow
+%  gold
+%  gray33
+%  chartreuse
+% (x<der,y<arriba)
+
+\begin{tikzpicture}[line width=0.25mm, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{scriptsize}
+
+%*************** nodos de la grafica *********************************
+%*************** derecha arriba ****************
+% 010 - 000
+\draw[color=snow] (5.5,0)-- (4,0);
+% 010 - 011
+\draw[color=snow] (5.5,0)-- (5.5,-1.5);
+% 010 - 110
+\draw[color=snow] (5.5,0)-- (6,0.5);
+% 110 - 100
+\draw[color=snow] (6,0.5)-- (4.5,0.5);
+% 110 - 111
+\draw[color=snow] (6,0.5)-- (6,-1);
+% 001 - 000
+\draw[color=snow] (4,-1.5)-- (4,0);
+% 001 - 011
+\draw[color=snow] (4,-1.5)-- (5.5,-1.5);
+% 101 - 100
+\draw[color=snow] (4.5,-1) -- (4.5,0.5);
+% 101 - 111
+\draw[color=snow] (4.5,-1) -- (6,-1);
+% 101 - 001
+\draw[color=snow] (4.5,-1) -- (4,-1.5);
+% 000 - 100
+\draw[color=snow] (4,0) -- (4.5,0.5);
+% 011 - 111
+\draw[color=snow] (5.5,-1.5) -- (6,-1);
+%010
+\fill [color=gold] (5.5,0) circle (2.5pt);
+%\draw[color=snow] (5.3,0.1) node {010};
+%110
+\fill [color=gold] (6,0.5) circle (2.5pt);
+%\draw[color=snow] (5.8,0.6) node {110};
+%001
+\fill [color=gold] (4,-1.5) circle (2.5pt);
+%\draw[color=snow] (3.8,-1.4) node {001};
+%111
+\fill [color=gold] (6,-1) circle (2.5pt);
+%\draw[color=snow] (5.8,-0.9) node {111};
+%011
+\fill [color=gold] (5.5,-1.5) circle (2.5pt);
+%\draw[color=snow] (5.3,-1.4) node {011};
+%000
+\fill [color=gold] (4,0) circle (2.5pt);
+%\draw[color=snow] (3.8,0.1) node {000};
+%100
+\fill [color=gold] (4.5,0.5) circle (2.5pt);
+%\draw[color=snow] (4.3,0.6) node {100};
+%101
+\fill [color=gold] (4.5,-1) circle (2.5pt);
+%\draw[color=snow] (4.3,-0.9) node {101};
+\end{scriptsize}
+\end{tikzpicture}

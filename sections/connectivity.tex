@@ -1,0 +1,66 @@
+% =================== Connectivity =================== %
+\begin{frame}[t]{Connectivity Measures}
+\begin{enumerate}
+\item \textbf{Node connectivity} ($c_n$). 
+\begin{itemize}
+\item \textbf{Minimal number of node-disjoint} paths between any pair of nodes.
+\item \textbf{Minimal number of nodes} that must be removed to disconnect the network.
+\end{itemize}
+\item \textbf{Link connectivity} ($c_l$). 
+\begin{itemize}
+\item \textbf{Minimal number of link-disjoint} paths between any pair of nodes.
+\item \textbf{Minimal number of links} that must be removed to disconnect the network.
+\end{itemize}
+\end{enumerate}
+\end{frame}
+% =================== Optimal Connectivity =================== %
+\begin{frame}[t]{Optimal Connectivity}
+
+\begin{itemize}
+\item A $\Delta-$regular graph is \textbf{optimally connected} if $c_n=c_l=\Delta$.
+\item Every \textbf{node-transitive} graph has $c_n=\Delta$.
+\item Every \textbf{link-transitive} graph has $c_l=\Delta$.
+\end{itemize}
+\centering{
+\begin{tabular}[center]{c c}
+\includegraphics<1>{images/tikz/scaleCube1.tikz}
+\includegraphics<2>{images/tikz/scaleCube2.tikz}
+\includegraphics<3>{images/tikz/scaleCube3.tikz}
+\includegraphics<4>{images/tikz/scaleCube4.tikz}
+\includegraphics<5>{images/tikz/scaleCube5.tikz}
+\includegraphics<6>{images/tikz/scaleCube6.tikz}
+\includegraphics<7-10>{images/tikz/scaleCube2.tikz}
+&\includegraphics<1-6>{images/tikz/3regular1.tikz}
+\includegraphics<7>{images/tikz/3regular2.tikz}
+\includegraphics<8>{images/tikz/3regular3.tikz}
+\includegraphics<9>{images/tikz/3regular4.tikz}
+\includegraphics<10>{images/tikz/3regular5.tikz}
+\\
+\textbf{Optimally connected}&\textbf{Non-optimally connected}\\
+$c_n=c_l=\Delta=3$&$c_n=c_l=2$\\
+\end{tabular}
+}
+\end{frame}
+% =================== Fault-tolerance =================== %
+\begin{frame}[t]{Fault-tolerance}
+\begin{itemize}
+\item Maximal number $f$, such that if $f$ nodes are removed, the resulting graph is still connected.
+\item A $\Delta$-regular graph is \textbf{optimally fault-tolerant} if $f=\Delta-1$.
+\item \textbf{Symmetric graphs} are optimally fault-tolerant.
+\end{itemize}
+\centering{
+\begin{tabular}[center]{c c}
+\includegraphics<1>{images/fault_tolerance/scaleCube1.tikz}
+\includegraphics<2>{images/fault_tolerance/scaleCube2.tikz}
+&\includegraphics<1>{images/fault_tolerance/3regular1.tikz}
+\includegraphics<2>{images/fault_tolerance/3regular2.tikz}
+\\
+\textbf{Optimally fault-tolerant}&\textbf{Non-optimally fault-tolerant}\\
+$f=\Delta-1=2$&$f=1$\\
+\end{tabular}
+}
+\end{frame}
+% =================== Connectivity and fault-tolerance =================== %
+%\begin{frame}[t]{Connectivity and Fault-tolerance}
+%\input{tables/connectivity_ft}
+%\end{frame}
